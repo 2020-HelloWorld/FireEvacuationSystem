@@ -11,7 +11,7 @@ class _RescuerDashboardState extends State<RescuerDashboard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Recuer Dashboard"),
+      child: Text("Rescuer Dashboard"),
     );
   }
 }
