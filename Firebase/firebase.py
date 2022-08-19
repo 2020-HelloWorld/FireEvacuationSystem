@@ -1,18 +1,19 @@
-#Importing modules
-from lib2to3.pytree import Node
+# Importing modules
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 import json
 
 
-#Initial setup
+# Initial setup
 cred = credentials.Certificate("Firebase/serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-#Intitalizing Database
+# Intitalizing Database
+
+
 class Person(object):
     def __init__(self, name, JSON_obj) -> None:
         self.name = name
@@ -24,6 +25,7 @@ class Person(object):
     def parse_JSON(self):
         db.collection('Person').document(self.name).set(self.JSON_obj)
 
+
 class Nodes(object):
     def __init__(self, name, JSON_obj) -> None:
         self.name = name
@@ -34,14 +36,16 @@ class Nodes(object):
     def parse_JSON(self):
         db.collection('Nodes').document(self.name).set(self.JSON_obj)
 
-# Converting JSON file to Python dictionary object and Parsing. 
+
+# Converting JSON file to Python dictionary object and Parsing.
 Person_collection = open('Firebase/person_data.json')
 Person_data = json.load(Person_collection)
 
 Nodes_collection = open('Firebase/nodes_data.json')
 Nodes_data = json.load(Nodes_collection)
 
-def update_details(Person_data:object, Nodes_data:object):
+
+def update_details(Person_data: object, Nodes_data: object):
     for i in Person_data["Person"]:
         for key, value in i.items():
             Person(key, value[0])
@@ -50,4 +54,5 @@ def update_details(Person_data:object, Nodes_data:object):
         for key, value in i.items():
             Nodes(key, value[0])
 
-update_details(Person_data= Person_data, Nodes_data= Nodes_data)
+
+update_details(Person_data=Person_data, Nodes_data=Nodes_data)
