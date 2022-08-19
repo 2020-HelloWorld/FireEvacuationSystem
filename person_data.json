@@ -1,0 +1,23 @@
+{
+    "Person":
+    [
+        {
+            "P-1":
+            [
+                {"Emergency": true, "Room": "A-3"}
+            ]
+        },
+        {
+            "P-2":
+            [
+                {"Emergency": true, "Room": "A-2"}
+            ]
+        },
+        {
+            "P-3":
+            [
+                {"Emergency": false, "Room": "A-1"}
+            ]
+        }
+    ]
+}
