@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:way_out/Pages/Rescuer/VictimLoc.dart';
 
 class RescuerDashboard extends StatefulWidget {
   const RescuerDashboard({Key? key}) : super(key: key);
@@ -27,13 +28,7 @@ class _RescuerDashboardState extends State<RescuerDashboard> {
                 itemBuilder: (ctx, index) {
                   var doc = snapshot.data!.docs[index];
                   var data = doc.data() as Map;
-                  return Container(
-                    child: Row(
-                      children: [
-                        Text("${data["Room"]}, Is it emergency? ${data["Emergency"]}")
-                      ],
-                    )
-                  );
+                  return VictimLoc(name: "${data["Name"]}", room: data["Room"], emergency: data["Emergency"]);
                 });
           }),
     );
