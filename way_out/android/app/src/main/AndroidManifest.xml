@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.way_out">
+    <uses-permission android:name="android.permission.Internet"/>
    <application
         android:label="way_out"
         android:name="${applicationName}"

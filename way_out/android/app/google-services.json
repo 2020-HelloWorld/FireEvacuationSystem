@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949992618241",
+    "project_id": "runtime-terror-b31ea",
+    "storage_bucket": "runtime-terror-b31ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949992618241:android:517383cd34afd9db314300",
+        "android_client_info": {
+          "package_name": "com.example.way_out"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949992618241-9po8glg4o8fn5ipbmdd08a39ru40cdr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-jAzK470oyNeOH-Hs4OHS_BJvV3s83uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949992618241-9po8glg4o8fn5ipbmdd08a39ru40cdr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
