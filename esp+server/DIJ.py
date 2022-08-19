@@ -15,11 +15,8 @@ from firebase_admin import db as bd
 # Class to represent a graph
 
 
-def run():
-    cred = credentials.Certificate("serviceAccountKey.json")
-    firebase_admin.initialize_app(cred)
+def run(db, bd):
 
-    db = firestore.client()
     while True:
         class Graph:
 
@@ -133,26 +130,30 @@ def run():
                 self.printSolution(dist, parent, src)
 
         g = Graph()
-        f = open('Weights.json')
+        # # f = open('Weights.json')
 
-        # returns JSON object as
-        # a dictionary
-        data = json.load(f)
-        l = ['Karan\r\n', 'Urmil\r\n', 'Kumkum\r\n']
-        # Closing file
-        f.close()
-        # print(data)
-        temp = max(data.values())
-        # print(temp)
-        res = [key for key in data if data[key] == temp]
-        # print("hehe", res)
-        # print(res[0])
-        if(res[0] == l[0]):
-            source = 1
-        elif(res[0] == l[1]):
-            source = 2
-        elif(res[0] == l[2]):
-            source = 3
+        # # returns JSON object as
+        # # a dictionary
+        # data = json.load(f)
+        # l = ['Karan\r\n', 'Urmil\r\n', 'Kumkum\r\n']
+        # # Closing file
+        # f.close()
+        # # print(data)
+        # temp = max(data.values())
+        # # print(temp)
+        # res = [key for key in data if data[key] == temp]
+        # # print("hehe", res)
+        # # print(res[0])
+        # if(res[0] == l[0]):
+        #     source = 1
+        # elif(res[0] == l[1]):
+        #     source = 2
+        # elif(res[0] == l[2]):
+        #     source = 3
+        s = db.collection("Person").document("P-1").get().to_dict()
+        # print(s)
+        source = s['Room']
+        print(source)
 
         print("src:", source)
         db_ref = db.collection("Nodes")
@@ -177,6 +178,6 @@ def run():
 
         # Print the solution
 
-        g.dijkstra(graph, source)
+        g.dijkstra(graph, int(source))
 
         time.sleep(5)
