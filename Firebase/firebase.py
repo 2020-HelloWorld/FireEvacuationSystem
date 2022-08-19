@@ -1,4 +1,5 @@
 #Importing modules
+from lib2to3.pytree import Node
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
@@ -6,7 +7,7 @@ import json
 
 
 #Initial setup
-cred = credentials.Certificate("serviceAccountKey.json")
+cred = credentials.Certificate("Firebase/serviceAccountKey.json")
 firebase_admin.initialize_app(cred)
 
 db = firestore.client()
@@ -34,18 +35,19 @@ class Nodes(object):
         db.collection('Nodes').document(self.name).set(self.JSON_obj)
 
 # Converting JSON file to Python dictionary object and Parsing. 
-Person_collection = open('person_data.json')
+Person_collection = open('Firebase/person_data.json')
 Person_data = json.load(Person_collection)
 
-Nodes_collection = open('nodes_data.json')
+Nodes_collection = open('Firebase/nodes_data.json')
 Nodes_data = json.load(Nodes_collection)
 
-def updatePerson(Person_data) -> None:
+def update_details(Person_data:object, Nodes_data:object):
     for i in Person_data["Person"]:
         for key, value in i.items():
             Person(key, value[0])
 
-def updateNodes(Nodes_data) -> None:
     for i in Nodes_data["Nodes"]:
         for key, value in i.items():
             Nodes(key, value[0])
+
+update_details(Person_data= Person_data, Nodes_data= Nodes_data)
