@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:way_out/Pages/User/UserMap.dart';
 
 class UserList extends StatefulWidget {
   const UserList({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class _UserListState extends State<UserList> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(100.0),
+      padding: const EdgeInsets.all(50.0),
       child: Container(
         alignment: Alignment.center,
         child: SingleChildScrollView(
@@ -24,17 +25,25 @@ class _UserListState extends State<UserList> {
                     width: 100.0,
                     child: FittedBox(
                       child: FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(
+                              builder: (context)=>UserMap(userIndex: 1)
+                          ));
+                        },
                         child: Text("1"),),
                     ),
                   ),
-                  SizedBox(width: 100,),
+                  SizedBox(width: 70,),
                   Container(
                     height: 100.0,
                     width: 100.0,
                     child: FittedBox(
                       child: FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(
+                              builder: (context)=>UserMap(userIndex: 2)
+                          ));
+                        },
                         child: Text("2"),),
                     ),
                   ),
@@ -48,17 +57,25 @@ class _UserListState extends State<UserList> {
                     width: 100.0,
                     child: FittedBox(
                       child: FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(
+                              builder: (context)=>UserMap(userIndex: 3)
+                          ));
+                        },
                         child: Text("3"),),
                     ),
                   ),
-                  SizedBox(width: 100,),
+                  SizedBox(width: 70,),
                   Container(
                     height: 100.0,
                     width: 100.0,
                     child: FittedBox(
                       child: FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(
+                              builder: (context)=>UserMap(userIndex: 4)
+                          ));
+                        },
                         child: Text("4"),),
                     ),
                   ),

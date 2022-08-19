@@ -26,6 +26,7 @@ class _RescuerDashboardState extends State<RescuerDashboard> {
             return ListView.builder(
                 itemCount: snapshot.data?.docs.length,
                 itemBuilder: (ctx, index) {
+                  // print("Index Number: ${index}");
                   var doc = snapshot.data!.docs[index];
                   var data = doc.data() as Map;
                   return VictimLoc(name: "${data["Name"]}", room: data["Room"], emergency: data["Emergency"]);
