@@ -5,7 +5,7 @@ import schedule
 
 def main_func():
     
-    arduino = serial.Serial('/dev/ttyACM0', 9600)
+    arduino = serial.Serial("/dev/ttyACM0", 9600)
     
     print('Established serial connection to Arduino')
     arduino_data = arduino.readline()
