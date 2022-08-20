@@ -21,7 +21,8 @@ class UserMap extends StatelessWidget {
             var data = doc.data() as Map;
             bool _danger = data["Emergency"];
 
-
+            var _path = data["Path"];
+            // _path = _path.split(" ");
                   return SingleChildScrollView(
                     child: Column(
                       children: [
@@ -46,8 +47,14 @@ class UserMap extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                          )
-
+                          ),
+                        SizedBox(width: 100,height: 100,),
+                        Text("${_path}",
+                        style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.w700
+                        ),
+                        )
                       ],
                     ),
                   );
