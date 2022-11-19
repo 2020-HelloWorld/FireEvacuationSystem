@@ -30,3 +30,5 @@ ESP + Server folder contains the code for getting the nearest bluetooth beacon a
 ### Firebase
 
 Firebase is a cloud data storage platform by google and helps to store the data dynamically in real time. The backend portion of this application is wriiten in python and all data send or recieved are parsed using JSON format. 
+
+https://www.researchgate.net/publication/339096717_An_IoT-based_Emergency_Evacuation_System
